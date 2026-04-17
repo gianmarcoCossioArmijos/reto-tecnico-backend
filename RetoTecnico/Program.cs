@@ -58,6 +58,17 @@ builder.Services.AddAuthentication( options =>
     });
 builder.Services.AddAuthorization();
 builder.Services.AddScoped<Jwtservice>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReact",
+        policy =>
+        {
+            policy
+                .WithOrigins("http://localhost:5173")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
 var app = builder.Build();
 
 app.MapGet("/", (HttpContext context) => {
@@ -71,6 +82,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
 }
 
+app.UseCors("AllowReact");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

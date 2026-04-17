@@ -23,6 +23,7 @@ namespace RetoTecnico.Data
 
         public DbSet<Users> Users { get; set; }
 
+        // Usuario adminitrador hardcodeado
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
