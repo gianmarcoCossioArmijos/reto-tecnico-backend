@@ -4,11 +4,36 @@
 
 ## Requerimientos:
 
-- [x] Conexion a una BD (PostgreSQL).
-- [x] Gestión completa (CRUD) de Pedidos.
+- [x] Conexion a una BD (PostgreSQL)
+- [x] Login y gestion de accesos
+- [x] Gestión completa (CRUD) de Pedidos
+- [x] Uso de Entity Framework
+- [x] Autenticación y autorización con JWT (tokens con expiración)
+- [x] Validación de credenciales contra base de datos
+- [x] Generación de JWT Bearer Token con claims
+- [x] Protección de endpoints con [Authorize]
 - [x] El número de pedido debe ser único
 
-## Paquetes:
+## Endpoints:
+
+### Login/User
+
+- /api/v1/User/signin (POST)
+
+### Pedidos
+
+- /api/v1/Pedido/pedidos (GET)
+- /api/v1/Pedido/buscar/{id} (GET)
+- /api/v1/Pedido/registrar (POST)
+- /api/v1/Pedido/modificar/{id} (PUT)
+- /api/v1/Pedido/eliminar/{id} (DELETE)
+
+## Requisitos de Proyecto:
+
+- .NET 9
+- PostgresSQL 16.0
+
+### Packetes para Proyecto
 
 - Microsoft.AspNetCore.OpenApi
 - Microsoft.EntityFrameworkCore
@@ -17,19 +42,16 @@
 - Npgsql
 - Swashbuckle.AspNetCore
 - Swashbuckle.AspNetCore.Swagger
+- Newtonsoft.Json
 
-## Base de Datos:
+### Base de datos
 
-- Creacion de tablas.
+- Para el proyecto se debe crear una base de datos en Postgres y enlazarla al proyecto, no sera necesario crear la talblas ya que se usara Entity
+- Debemos crear entidades y ejecutar los comando de migracion y actualizacion para ver reflejadas las tablas en la DB
 
-```sql
-CREATE TABLE pedidos (
-    id SERIAL PRIMARY KEY,
-    numeroPedido VARCHAR(50) NOT NULL UNIQUE,
-	dni_cliente CHAR(8) NOT NULL,
-    cliente VARCHAR(150) NOT NULL,
-    fecha DATE NOT NULL,
-    total DECIMAL(10,2) NOT NULL,
-    estado CHAR(20) NOT NULL
-);
-```
+`Comando de Migracion y Actualizacion: `
+ 
+ ```sh
+	Add-Migration "init"
+	Update-Database
+ ```
