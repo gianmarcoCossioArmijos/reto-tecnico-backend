@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -115,6 +115,32 @@
     "ReturnTypes": [
       {
         "Type": "RetoTecnico.Domain.Pedido",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RetoTecnico.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/v1/User/signin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "RetoTecnico.Model.UserLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "RetoTecnico.Model.UserLoginResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",

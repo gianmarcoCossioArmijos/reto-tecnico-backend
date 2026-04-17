@@ -20,5 +20,20 @@ namespace RetoTecnico.Data
         }
 
         public DbSet<Pedido> Pedidos { get; set; }
+
+        public DbSet<Users> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            _ = modelBuilder.Entity<Users>().HasData([
+                new Users
+                {
+                    Id = 1,
+                    Username = "administrator",
+                    Password = "123456",
+                    Role = "ADMIN"
+                }]);
+        }
     }
 }
