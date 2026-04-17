@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RetoTecnico.Data;
 using RetoTecnico.Domain;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RetoTecnico.Controllers
 {
@@ -27,6 +28,18 @@ namespace RetoTecnico.Controllers
         [HttpPost("registrar")]
         public async Task<ActionResult<Pedido>> GuardarPedido(Pedido pedido)
         {
+            var numero = pedido.NumeroPedido;
+            var encontrado = await cont.Pedidos
+                .FirstOrDefaultAsync(p => p.NumeroPedido == numero);
+            if (encontrado != null)
+            {
+                return BadRequest(new
+                {
+                    codigo = "PEDIDO_DUPLICADO",
+                    mensaje = "El número de pedido ya existe"
+                });
+            }
+
             pedido.Fecha = DateTime.UtcNow;
             cont.Pedidos.Add(pedido);
             await cont.SaveChangesAsync();
