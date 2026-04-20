@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RetoTecnico")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a179317c502c9293d7066a123f1f38c29ab0da4c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81db6e873294e9e9196a89a778419b138f0cf7b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("RetoTecnico")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RetoTecnico")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

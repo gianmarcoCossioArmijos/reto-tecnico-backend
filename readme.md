@@ -2,6 +2,10 @@
 
 - Este reto técnico evalúa tus habilidades en backend con .NET, frontend con React, arquitectura limpia, seguridad, patrones de resiliencia y buenas prácticas profesionales, mediante la construcción de una aplicación end-to-end.
 
+## Link de Video de Muestra:
+
+- https://drive.google.com/file/d/1Dis9WwTCvMaQd4MsNkL75OTP5PuTP-ny/view?usp=sharing
+
 ## Requerimientos:
 
 - [x] Conexion a una BD (PostgreSQL)
